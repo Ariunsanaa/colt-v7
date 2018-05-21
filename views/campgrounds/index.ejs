@@ -1,0 +1,44 @@
+<% include ../partials/header %>
+
+
+
+
+
+<div class="container">
+
+<header class="jumbotron">
+    <div class="container">
+    <h1>Welcome to 2020 Olymp</h1>
+    <p>View our Great athletes from all over the world</p>
+    <p class="btn btn-primary btn-large">
+        <a href="/campgrounds/new" 
+        style="color: white; 
+        text-decoration: none;">
+            Add a new campground
+    </a>
+    </p>
+</div>
+    
+</header>
+
+<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                        <img src="<%= campground.image %>">
+                </div>
+                <div class="caption">
+                        <h4><%= campground.name %></h4>
+                </div>
+                <p>
+                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                </p>
+            </div>
+        <% }) %>
+</div>
+
+<a href="/">Go to Home Page</a>
+
+
+<% include ../partials/footer %>
+</div>
